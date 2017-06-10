@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{103F8AA1-5229-4F89-81E1-116DDAE68558}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TG.UBP.Application.Dto</RootNamespace>
+    <AssemblyName>TG.UBP.Application.Dto</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseManage\Identity\OrganizationInputDto.cs" />
+    <Compile Include="BaseManage\Identity\RoleInputDto.cs" />
+    <Compile Include="BaseManage\Identity\UserInputDto.cs" />
+    <Compile Include="BaseManage\Identity\UserOutputDto.cs" />
+    <Compile Include="BaseManage\Identity\UserRoleMapInputDto.cs" />
+    <Compile Include="BaseManage\OAuth\ClientInputDto.cs" />
+    <Compile Include="BaseManage\OAuth\ClientSecretInputDto.cs" />
+    <Compile Include="BaseManage\Security\EntityInfoInputDto.cs" />
+    <Compile Include="BaseManage\Security\EntityRoleMapInputDto.cs" />
+    <Compile Include="BaseManage\Security\EntityUserMapInputDto.cs" />
+    <Compile Include="BaseManage\Security\FunctionInputDto.cs" />
+    <Compile Include="BaseManage\Security\ModuleInputDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\osharp\src\OSharp.Core\OSharp.Core.csproj">
+      <Project>{f7c67c95-facb-4160-9a88-cb738e65e034}</Project>
+      <Name>OSharp.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\osharp\src\OSharp.Permissions.OAuth\OSharp.Permissions.OAuth.csproj">
+      <Project>{85c8d5b7-1692-434c-afcd-01940930f6c5}</Project>
+      <Name>OSharp.Permissions.OAuth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\osharp\src\OSharp.Permissions\OSharp.Permissions.csproj">
+      <Project>{e34d7585-25da-4622-9019-89dbc766ad67}</Project>
+      <Name>OSharp.Permissions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

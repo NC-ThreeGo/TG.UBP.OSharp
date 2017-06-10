@@ -1,0 +1,1 @@
+﻿由于OSharp框架已实现了Logging在SqlServer数据库下的实体映射信息，所以这里就不需要再重新映射了。

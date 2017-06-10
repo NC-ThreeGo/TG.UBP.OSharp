@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B3A239B6-FB7F-431A-B555-93BBA82DAC93}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TG.UBP.Application.Service</RootNamespace>
+    <AssemblyName>TG.UBP.Application.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseManage\Identity\IdentityService.cs" />
+    <Compile Include="BaseManage\Identity\IdentityService.Organization.cs" />
+    <Compile Include="BaseManage\Identity\IdentityService.Role.cs" />
+    <Compile Include="BaseManage\Identity\IdentityService.User.cs" />
+    <Compile Include="BaseManage\Identity\IIdentityContract.cs" />
+    <Compile Include="BaseManage\Logging\ILoggingContract.cs" />
+    <Compile Include="BaseManage\Security\ISecurityContract.cs" />
+    <Compile Include="ITestContract.cs" />
+    <Compile Include="BaseManage\Logging\LoggingService.cs" />
+    <Compile Include="BaseManage\Logging\LoggingService.DataLog.cs" />
+    <Compile Include="BaseManage\Security\SecurityService.cs" />
+    <Compile Include="BaseManage\Security\SecurityService.EntityInfo.cs" />
+    <Compile Include="BaseManage\Security\SecurityService.Function.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\osharp\src\OSharp.Core\OSharp.Core.csproj">
+      <Project>{f7c67c95-facb-4160-9a88-cb738e65e034}</Project>
+      <Name>OSharp.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\osharp\src\OSharp.Permissions\OSharp.Permissions.csproj">
+      <Project>{e34d7585-25da-4622-9019-89dbc766ad67}</Project>
+      <Name>OSharp.Permissions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\osharp\src\OSharp.Utility\OSharp.Utility.csproj">
+      <Project>{946e0a0a-8280-46b3-893e-1b00a554ccab}</Project>
+      <Name>OSharp.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TG.UBP.Application.Dto\TG.UBP.Application.Dto.csproj">
+      <Project>{103f8aa1-5229-4f89-81e1-116ddae68558}</Project>
+      <Name>TG.UBP.Application.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TG.UBP.Core.Entity\TG.UBP.Core.Entity.csproj">
+      <Project>{19b47751-385e-4236-8ebf-a37e0844b1ef}</Project>
+      <Name>TG.UBP.Core.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TG.UBP.Core.Service\TG.UBP.Core.Service.csproj">
+      <Project>{999b012c-f9e9-4cd0-ad7f-b940bfead0de}</Project>
+      <Name>TG.UBP.Core.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

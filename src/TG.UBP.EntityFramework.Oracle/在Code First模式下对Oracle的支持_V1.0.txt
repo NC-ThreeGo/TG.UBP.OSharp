@@ -1,0 +1,11 @@
+﻿OSharp框架本身未实现对Oracle的支持，所以需要自己来实现。
+大概的思路：为不同的数据库增加不同的映射，然后根据配置文件的DbType来动态加载当前数据库的映射信息。
+具体如下：
+
+1、在Web.config中增加DbType配置项，用于表示当前数据库的类型；
+2、IEntityMapper：增加一个属性OwnDbType，表示该映射信息属于哪种数据库；
+3、在DbContextInitializerBase<TDbContext>.EntityMappersFilter方法中，增加“OwnDbType=配置文件DbType配置项”过滤条件，这样系统就会只加载当前数据库类型的配置信息；
+4、在osharp.config配置文件中的<context>中增加“DbDefaultSchema”值（如果是Oracle数据库，值必须大写），以便在modelBuilder.HasDefaultSchema(DbDefaultSchema)调用；
+5、为了实现第4点，需要在OSharp.Core.Configs.ConfigFile.ContextElement类中增加DbDefaultSchema字段；
+6、如果使用SqlServer数据库，则osharp.config配置文件中的<context>中增加“DbDefaultSchema”值必须=“dbo”，否则在创建Logging相关表时会报错；
+7、如果使用Oracle数据库，则defaultDbContext和loggingDbContext必须属于不同的用户（Schema），否则在创建Logging相关表时会报错；
