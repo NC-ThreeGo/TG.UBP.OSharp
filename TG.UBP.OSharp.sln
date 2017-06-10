@@ -58,7 +58,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00-Doc", "00-Doc", "{875F01A8-DA9A-4375-83B8-33CCE8DD8EB5}"
 	ProjectSection(SolutionItems) = preProject
 		doc\OSharp.Demo.Web.Startup.Configuration.xmind = doc\OSharp.Demo.Web.Startup.Configuration.xmind
-		doc\开发说明.md = doc\开发说明.md
+		doc\开发说明.docx = doc\开发说明.docx
 		doc\遗留问题.md = doc\遗留问题.md
 	EndProjectSection
 EndProject
